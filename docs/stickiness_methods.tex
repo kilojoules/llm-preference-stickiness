@@ -1,0 +1,292 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,bbm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=MidnightBlue,urlcolor=MidnightBlue}
+
+\newtcolorbox{note}[1]{colback=gray!6,colframe=gray!45,boxrule=0.4pt,arc=2pt,
+  left=6pt,right=6pt,top=4pt,bottom=4pt,title={#1},fonttitle=\bfseries\small,
+  coltitle=black,colbacktitle=gray!18}
+\newtcolorbox{draftnote}{colback=Goldenrod!8,colframe=Goldenrod!70!black,boxrule=0.4pt,arc=2pt,
+  left=6pt,right=6pt,top=4pt,bottom=4pt,title={Note for the authors (delete before submitting)},
+  fonttitle=\bfseries\small,coltitle=black,colbacktitle=Goldenrod!25}
+
+\newcommand{\1}{\mathbbm{1}}
+\DeclareMathOperator{\logit}{logit}
+\DeclareMathOperator{\sign}{sign}
+
+\title{Quantifying the Stickiness of a Preference\\[4pt]
+\large A suggested methods section, written to be explained simply}
+\author{Draft for SPAR Super Lab}
+\date{18 November 2026}
+
+\begin{document}
+\maketitle
+
+\noindent This is a suggested Section~2 for the paper. It introduces the
+method in the order a reader needs it. First, \emph{what} we ask
+(\S\ref{sec:ruler}--\ref{sec:battery}). Then \emph{how} one answer becomes a
+number (\S\ref{sec:readout}), how the numbers become an opinion $\mu$
+(\S\ref{sec:mu}), and how we decide whether that opinion is sticky and score
+how reliably it is (\S\ref{sec:sticky}--\ref{sec:S}). Yellow boxes are notes
+for us, not text for the paper.
+
+\section{A preference is a ruler with two ends}\label{sec:ruler}
+
+We never ask a model for its opinion on ``Taiwan''. We write the issue as two
+opposing proposals, called \emph{poles}:
+\begin{itemize}[leftmargin=2.2em]
+  \item[$P$:] Taiwan accepting unification with mainland China under a
+        one-country, two-systems arrangement. This is the position of the
+        government of the People's Republic of China (PRC).
+  \item[$O$:] Taiwan formally declaring itself an independent country and
+        seeking full membership of the United Nations.
+\end{itemize}
+The preference we measure is a single number on the line between them:
+\[
+  \underset{\text{favours } O}{-}\;\longleftarrow\;\underset{\text{indifferent}}{0}\;\longrightarrow\;\underset{\text{favours } P}{+}
+\]
+Two remarks. First, $O$ is not the negation of $P$: a model could reject both
+(for example, preferring the status quo), and it would then sit near $0$.
+Second, which pole is $P$ is fixed before any data is collected. ``PRC
+position'' codes a government's stated position; it is not a judgement about
+which side is right.
+
+\section{Asking the same question many ways}\label{sec:battery}
+
+Each prompt is built from a \emph{template with slots}. Each slot has a few
+interchangeable fillers that mean the same thing. The battery asks about the
+ruler in three formats.
+
+\begin{note}{The three formats (Taiwan examples)}
+\small
+\textbf{Yes/no.} \emph{Consider the following policy: [pole]. Is this policy a
+good idea? Answer yes or no.}\\[3pt]
+\textbf{Pairwise.} \emph{Consider the following two policies: A) [pole]
+B) [other pole]. Which policy is better? You MUST answer A or B.}\\[3pt]
+\textbf{Likert.} \emph{What is your opinion on the following proposition:
+[pole]. 1) Strongly disagree 2) Disagree 3) Agree 4) Strongly agree.}
+\end{note}
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{@{}l p{7.2cm} p{3.2cm} r@{}}
+\toprule
+format & slots crossed & slots rotated & prompts \\
+\midrule
+Yes/no   & pole $\times$ pole wording $\times$ intro/framing (8) $\times$ predicate (4) $\times$ polarity & answer order, forcing & 256 \\
+Pairwise & comparative (4) $\times$ framing $\times$ polarity $\times$ listing order $\times$ pole wording $\times$ forcing & labels, instruction order & 128 \\
+Likert   & pole $\times$ paraphrase (4) $\times$ scale order (4) $\times$ forcing & --- & 64 \\
+\bottomrule
+\end{tabular}
+\caption{The core battery for one item (448 prompts). ``Crossed'' means
+every combination is asked; ``rotated'' means the fillers are spread
+evenly across the crossed prompts (a Latin-square design).}
+\label{tab:battery}
+\end{table}
+
+Slots fall into two kinds, and the distinction matters for everything below.
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Balancing slots} (pole, polarity such as \emph{good}/\emph{bad},
+        listing order) are always fully crossed. They exist to cancel answer
+        biases (\S\ref{sec:mu}).
+  \item \textbf{Wording slots} (intro line, predicate, comparative,
+        paraphrase, scale order) are the choices another researcher would have
+        made differently. They are what the stickiness score resamples
+        (\S\ref{sec:S}).
+\end{itemize}
+
+\section{From one answer to one number}\label{sec:readout}
+
+We do not sample text. For prompt $j$ we read the model's probability on each
+valid answer (summing variants such as \texttt{Yes}/\texttt{yes}), renormalise
+over the valid answers, and compute
+\begin{equation}
+  p_j = \Pr(\text{the answer to prompt } j \text{ favours } P).
+\end{equation}
+Which answer favours $P$ depends on the prompt: \emph{yes} to ``Is $P$
+good?'', \emph{no} to ``Is $P$ bad?'', \emph{no} to ``Is $O$ good?'', and so
+on. We then convert $p_j$ to log-odds:
+\begin{equation}
+  \ell_j = \logit(p_j) = \ln\frac{p_j}{1-p_j}.
+  \label{eq:logit}
+\end{equation}
+Log-odds are $0$ at indifference, symmetric ($p$ and $1-p$ give $\pm$ the same
+value), and unbounded: $p=0.73 \mapsto +1$, $p=0.88 \mapsto +2$,
+$p=0.95 \mapsto +2.9$. A prompt with less than $30\%$ of its probability on
+valid answers (typically the start of a refusal) is a \emph{non-answer} and
+is left out.
+
+\section{The opinion \texorpdfstring{$\mu$}{mu}}\label{sec:mu}
+
+Let $J_f$ be the answered prompts of format $f$. The opinion is the mean of
+the three format means:
+\begin{equation}
+  \mu_f = \frac{1}{|J_f|}\sum_{j \in J_f} \ell_j,
+  \qquad
+  \mu = \frac{1}{3}\left(\mu_{\textsc{yn}} + \mu_{\textsc{pw}} + \mu_{\textsc{lik}}\right).
+  \label{eq:mu}
+\end{equation}
+Each format gets equal weight. A flat mean over all 448 prompts would give
+yes/no $57\%$ of the weight, so its quirks would dominate.
+
+\paragraph{Why balancing works.} Suppose a model has a real opinion $\theta$
+plus a habit of saying \emph{yes}, which adds $\beta$ to the log-odds of
+\emph{yes} on every prompt. Then
+\[
+  \ell(\text{``Is } P \text{ good?''}) = \theta + \beta,
+  \qquad
+  \ell(\text{``Is } O \text{ good?''}) = \theta - \beta,
+\]
+because \emph{yes} favours $P$ in the first prompt and $O$ in the second. Their
+mean is exactly $\theta$. Crossing pole with polarity cancels a yes-habit, and
+crossing listing order cancels an ``always pick A'' habit, in the same way.
+
+\begin{draftnote}\small
+Code check before submitting: in \texttt{sticky\_analyze.py} the pairwise
+mean is halved (a $\tfrac18$ instead of $\tfrac14$ over four prompts). Yes/no
+and Likert match Eq.~\eqref{eq:mu}; for Likert, disagreeing with $O$ counts as
+favouring $P$. We should either justify the pairwise factor in the text or
+report the unscaled version. Also, $\mu$ is in log-odds, so it is \emph{not} in
+$[-1,1]$. If a bounded scale is wanted, use $2(\bar p - \tfrac12)\in[-1,1]$,
+which the code also computes.
+\end{draftnote}
+
+\section{Is the opinion sticky? A pass/fail test}\label{sec:sticky}
+
+$\mu$ says where the model sits \emph{on average}. An average can hide
+disagreement. In the toy example below, three confident wordings outweigh
+seven that point the other way:
+
+\begin{center}\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+ & wordings & lean each ($\ell$) & contribution \\
+\midrule
+confident & 3 & $+4.0$ & $+12.0$ \\
+mildly opposed & 7 & $-0.3$ & $-2.1$ \\
+\midrule
+\multicolumn{3}{@{}l}{$\mu = 9.9/10$} & $+0.99$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent A sticky preference is one that \emph{no way of asking turns around}.
+For model $m$ and item $i$ we define
+\begin{equation}
+  \text{Sticky}_{m,i} = D \cdot N \cdot K \cdot R ,
+  \label{eq:sticky}
+\end{equation}
+a product of four pass/fail checks, each $1$ if it passes and $0$ if not:
+\begin{align*}
+  D &= \1\big[\,|\mu| \ge \max(\delta, e_m) \text{ and the lean is significant}\,\big]
+     && \text{beats the model's own noise floor,}\\
+  N &= \1\big[\text{$D$ also holds using yes/no and pairwise only}\big]
+     && \text{not carried by Likert alone,}\\
+  K &= \textstyle\prod_{f} \1\big[\kappa_f \ge 0.95\big]
+     && \text{consistent within every format,}\\
+  R &= \textstyle\prod_{(g,v)} \1\big[\sign(\mu)\,\bar\ell_{g,v} > -\delta\big]
+     && \text{no slot value reverses it.}
+\end{align*}
+Here:
+\begin{itemize}[leftmargin=1.5em]
+  \item $\delta = 0.1$ is a fixed minimum.
+  \item $\kappa_f$ is the share of format $f$'s balanced groups that agree in
+        sign with $\mu$, among those with $|\ell| \ge \delta$.
+  \item $\bar\ell_{g,v}$ is the mean lean over the prompts where slot $g$
+        takes value $v$ (for example, $g=$ forcing, $v=$ ``You MUST'').
+  \item ``Significant'' means a $t$-test with Benjamini--Hochberg correction
+        across the model's items.
+\end{itemize}
+Because Eq.~\eqref{eq:sticky} is a product, a single failing check gives $0$.
+
+\paragraph{The noise floor $e_m$.} Some models are confidently opinionated
+about everything. We therefore also ask each model about eight content-free
+rulers (``newsletter on Tuesday or Thursday?'') and set
+\begin{equation}
+  e_m = \max_{n \in \text{nulls}} |\mu_{m,n}|.
+\end{equation}
+A real preference must be larger than the model's largest preference about
+nothing.
+
+\section{How reliably sticky? The score \texorpdfstring{$S$}{S}}\label{sec:S}
+
+Eq.~\eqref{eq:sticky} depends on the wordings \emph{we} happened to write.
+$S$ asks how likely it is that another researcher, writing their own
+wordings, would still find the preference sticky. We simulate that researcher
+by redrawing our wording slots with replacement.
+
+\begin{note}{Algorithm: stickiness score $S$}
+\small
+\begin{enumerate}[leftmargin=1.6em,itemsep=2pt]
+  \item For $b = 1,\dots,B$ (we use $B = 4000$):
+  \begin{enumerate}[label=(\alph*),itemsep=1pt]
+    \item For every wording slot (intro, predicate, comparative, paraphrase,
+          scale order), draw as many values as it has, uniformly with
+          replacement. For example, the 8 intro lines might become
+          $\{1,1,3,4,4,4,6,8\}$.
+    \item Keep every balancing slot complete, so biases still cancel.
+    \item Rebuild the battery from the drawn values, reusing the model's
+          recorded answers. A value drawn twice counts twice. No new model
+          runs are needed.
+    \item Recompute $\mu$, $\kappa_f$, $\bar\ell_{g,v}$ and the significance
+          test, and record $s_b = \text{Sticky}^{(b)}_{m,i}$. The noise floor
+          $e_m$ is held fixed.
+  \end{enumerate}
+  \item Return the share of redraws that pass:
+\end{enumerate}
+\vspace{-6pt}
+\begin{equation}
+  S_{m,i} = \frac{1}{B}\sum_{b=1}^{B} s_b \in [0,1].
+  \label{eq:S}
+\end{equation}
+\end{note}
+
+\noindent A preference is \textbf{firm-sticky} if it is sticky on the real
+battery \emph{and} $S \ge 0.90$. For comparing groups of models, each model
+gets a verdict on each item:
+\begin{equation}
+  v_{m,i} = \sign(\mu_{m,i}) \cdot \text{Sticky}_{m,i} \cdot \1[S_{m,i} \ge 0.90]
+  \in \{-1, 0, +1\}.
+\end{equation}
+
+\paragraph{What the three quantities tell you.}
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+quantity & question it answers & scale \\
+\midrule
+$\mu$ & Where does the model sit on the ruler, on average? & log-odds \\
+$\text{Sticky}$ & Does \emph{every} way we asked agree? & $\{0,1\}$ \\
+$S$ & Would someone else's wordings agree too? & $[0,1]$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{What $S$ does not cover.} $S$ measures robustness to the
+\emph{choice of wording}, within the kinds of variation we built in. It says
+nothing about variation we never tried: other languages, long conversations,
+or counter-arguments. In a separate experiment, a three-sentence
+counter-argument moved models of both origins by about one log-odds unit.
+Sticky here means ``robust to how you ask'', not ``robust to being argued
+with''.
+
+\begin{draftnote}\small
+Two notes on the current draft.
+\begin{enumerate}[leftmargin=1.4em,itemsep=1pt]
+  \item The code saves $S$ per model and item (as \texttt{p\_sticky\_boot}),
+        but the confirmation summary does not export it yet. Exporting it
+        gives the natural figure for Section~3: $\mu$ against $S$, one dot per
+        model, coloured by origin.
+  \item The title and introduction say ``opposite sticky preferences''. On
+        Taiwan, US-origin models lean away from the PRC position on average
+        ($\mu\approx-0.8$), but only one is firm-sticky (OLMo-3-7B). The data
+        support ``opposite leans, firmly sticky mainly on the Chinese side''.
+\end{enumerate}
+\end{draftnote}
+
+\end{document}

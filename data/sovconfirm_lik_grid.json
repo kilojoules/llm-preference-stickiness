@@ -1,0 +1,159 @@
+{
+ "description": "sovconfirm LIK grid: prefs3_lik_grid.json restricted to the English arms and the 14 sovconfirm axes (scripts/pct/sovconfirm_build.py).",
+ "optout_text": "No opinion",
+ "arms": [
+  {
+   "name": "core_en",
+   "lang": "en",
+   "format": "LIK",
+   "rungs": [
+    "R1",
+    "R3"
+   ],
+   "items": {
+    "axes": [
+     "st_cu_sv_taiwan__v3",
+     "st_cu_sv_diaoyu__v3",
+     "st_cu_sv_south_china_sea__v3",
+     "st_cu_sv_hk_security_law__v3",
+     "st_cu_sv_crimea__v3",
+     "st_cu_sv_kosovo__v3",
+     "st_cu_nl_fair_month__v3",
+     "st_cu_nl_sign_color__v3",
+     "st_cu_nl_park_name__v3",
+     "st_cu_nl_meeting_day__v3",
+     "st_cu_nl_font_size__v3",
+     "st_cu_nl_bridge_colour__v3",
+     "st_cu_nl_surf_signs__v3",
+     "st_cu_nl_surf_paper__v3"
+    ]
+   },
+   "orders": [
+    "paper",
+    "reversed",
+    "scrambled",
+    "scrambled2"
+   ],
+   "numbering": "positional",
+   "forcings": [
+    2,
+    6
+   ],
+   "optout": null,
+   "paraphrases": [
+    0,
+    3,
+    6,
+    9
+   ]
+  },
+  {
+   "name": "exit_en",
+   "lang": "en",
+   "format": "LIK",
+   "rungs": [
+    "R1"
+   ],
+   "items": {
+    "axes": [
+     "st_cu_sv_taiwan__v3",
+     "st_cu_sv_diaoyu__v3",
+     "st_cu_sv_south_china_sea__v3",
+     "st_cu_sv_hk_security_law__v3",
+     "st_cu_sv_crimea__v3",
+     "st_cu_sv_kosovo__v3",
+     "st_cu_nl_fair_month__v3",
+     "st_cu_nl_sign_color__v3",
+     "st_cu_nl_park_name__v3",
+     "st_cu_nl_meeting_day__v3",
+     "st_cu_nl_font_size__v3",
+     "st_cu_nl_bridge_colour__v3",
+     "st_cu_nl_surf_signs__v3",
+     "st_cu_nl_surf_paper__v3"
+    ]
+   },
+   "orders": [
+    "paper",
+    "reversed",
+    "scrambled",
+    "scrambled2"
+   ],
+   "numbering": "positional",
+   "forcings": [
+    2
+   ],
+   "optout": "last",
+   "paraphrases": [
+    0,
+    6
+   ]
+  },
+  {
+   "name": "ladder_R0_en",
+   "lang": "en",
+   "format": "LIK",
+   "rungs": [
+    "R0"
+   ],
+   "items": {
+    "axes": [
+     "st_cu_sv_taiwan__v3",
+     "st_cu_sv_diaoyu__v3",
+     "st_cu_sv_south_china_sea__v3",
+     "st_cu_sv_hk_security_law__v3",
+     "st_cu_sv_crimea__v3",
+     "st_cu_sv_kosovo__v3",
+     "st_cu_nl_fair_month__v3",
+     "st_cu_nl_sign_color__v3",
+     "st_cu_nl_park_name__v3",
+     "st_cu_nl_meeting_day__v3",
+     "st_cu_nl_font_size__v3",
+     "st_cu_nl_bridge_colour__v3",
+     "st_cu_nl_surf_signs__v3",
+     "st_cu_nl_surf_paper__v3"
+    ]
+   },
+   "orders": [
+    "paper"
+   ],
+   "numbering": "positional",
+   "forcings": [
+    1
+   ],
+   "optout": null,
+   "paraphrases": [
+    0,
+    6
+   ]
+  }
+ ],
+ "decode": {
+  "axes": [
+   "st_cu_sv_taiwan__v3",
+   "st_cu_sv_diaoyu__v3",
+   "st_cu_sv_south_china_sea__v3",
+   "st_cu_sv_hk_security_law__v3",
+   "st_cu_sv_crimea__v3",
+   "st_cu_sv_kosovo__v3",
+   "st_cu_nl_fair_month__v3",
+   "st_cu_nl_sign_color__v3",
+   "st_cu_nl_park_name__v3",
+   "st_cu_nl_meeting_day__v3",
+   "st_cu_nl_font_size__v3",
+   "st_cu_nl_bridge_colour__v3",
+   "st_cu_nl_surf_signs__v3",
+   "st_cu_nl_surf_paper__v3"
+  ],
+  "paraphrases": [
+   0
+  ],
+  "cells": [
+   [
+    "paper",
+    "positional",
+    6,
+    null
+   ]
+  ]
+ }
+}

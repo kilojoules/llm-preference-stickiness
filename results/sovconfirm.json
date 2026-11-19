@@ -1,0 +1,1903 @@
+{
+ "models": [
+  "apriel-5b",
+  "baichuan2-13b",
+  "deepseek-7b",
+  "glm-4.5-air",
+  "glm-5.2-api",
+  "glm-5.3-api",
+  "gpt-oss-120b",
+  "llama-3.3-70b",
+  "longcat-flash-lite",
+  "nemotron-3-super-120b",
+  "olmo-3-7b",
+  "phi-4",
+  "qwen2.5-14b",
+  "qwen2.5-72b",
+  "qwen3-14b",
+  "qwen3.5-27b",
+  "r1-0528-qwen3-8b",
+  "r1-distill-llama-70b",
+  "r1-distill-llama-8b",
+  "rnj-1",
+  "solar-open-100b",
+  "zamba2-7b"
+ ],
+ "excluded": [
+  {
+   "model": "gemma-4-12B-it",
+   "reason": "null-axis valid share {'YN': 0.10429632440233162, 'PW': 0.13324185571159664, 'LIK': 0.3459449086511685}"
+  },
+  {
+   "model": "gemma-4-31B-it",
+   "reason": "null-axis valid share {'YN': 0.27182224005906475, 'PW': 0.3498055656394667, 'LIK': 0.2912313502797542}"
+  },
+  {
+   "model": "hunyuan-a13b",
+   "reason": "null-axis valid share {'YN': 4.388716753055782e-13, 'PW': 1.1939574589048838e-10, 'LIK': 2.124177994281731e-11}"
+  },
+  {
+   "model": "orion-14b",
+   "reason": "null-axis valid share {'YN': 0.38472492727088253, 'PW': 0.16679981384874185, 'LIK': 0.37686525340595467}"
+  },
+  {
+   "model": "r1-distill-qwen-14b",
+   "reason": "null-axis valid share {'YN': 0.21494455343775612, 'PW': 0.0030374488655647795, 'LIK': 0.06018389931357666}"
+  }
+ ],
+ "per_model": {
+  "apriel-5b": {
+   "origin": "us",
+   "lab": "us:servicenow",
+   "tier": "B",
+   "api": false,
+   "discovery": false,
+   "c1": 0.0,
+   "c1_avail": 0.0,
+   "c1_items": 4,
+   "fp32": true,
+   "c2": -0.07105700450937286,
+   "lean": {
+    "sv_taiwan": -0.6059,
+    "sv_diaoyu": -0.1896,
+    "sv_south_china_sea": -0.8629,
+    "sv_hk_security_law": -0.5438
+   },
+   "cls": {
+    "sv_taiwan": "FLAT",
+    "sv_diaoyu": "SPINNING",
+    "sv_south_china_sea": "FLAT",
+    "sv_hk_security_law": "FLAT",
+    "sv_crimea": "WEAK-CONSISTENT",
+    "sv_kosovo": "STICKY"
+   },
+   "elect": {
+    "sv_taiwan": -0.07105700450937286,
+    "sv_diaoyu": -0.11198253235689258,
+    "sv_south_china_sea": -0.05322273605396543,
+    "sv_hk_security_law": -0.0030365745757190143,
+    "sv_crimea": 0.0561394934252823,
+    "sv_kosovo": -0.036180653350701704
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 1.0518910043962186,
+    "dropped_formats": [
+     "PW"
+    ],
+    "null_valid_share_by_format": {
+     "YN": 0.8638702644605858,
+     "PW": 0.21585845077482996,
+     "LIK": 0.9063318718520103
+    }
+   }
+  },
+  "baichuan2-13b": {
+   "origin": "cn",
+   "lab": "cn:baichuan",
+   "tier": "B",
+   "api": false,
+   "discovery": false,
+   "c1": 0.25,
+   "c1_avail": 0.25,
+   "c1_items": 4,
+   "fp32": true,
+   "c2": 0.022844418751180876,
+   "lean": {
+    "sv_taiwan": 0.9761,
+    "sv_diaoyu": 2.5095,
+    "sv_south_china_sea": 0.2664,
+    "sv_hk_security_law": 1.5432
+   },
+   "cls": {
+    "sv_taiwan": "STICKY",
+    "sv_diaoyu": "STICKY",
+    "sv_south_china_sea": "SPINNING",
+    "sv_hk_security_law": "STICKY",
+    "sv_crimea": "FLAT",
+    "sv_kosovo": "FLAT"
+   },
+   "elect": {
+    "sv_taiwan": 0.022844418751180876,
+    "sv_diaoyu": -0.16305715977939642,
+    "sv_south_china_sea": -0.22215543646501115,
+    "sv_hk_security_law": 0.04809292941895475,
+    "sv_crimea": -0.45848947065655543,
+    "sv_kosovo": -0.23595809826391126
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.6925963728514875,
+    "dropped_formats": [
+     "PW",
+     "YN"
+    ],
+    "null_valid_share_by_format": {
+     "YN": 0.3016222060787698,
+     "PW": 0.33750031581720974,
+     "LIK": 0.8029930275466656
+    }
+   }
+  },
+  "deepseek-7b": {
+   "origin": "cn",
+   "lab": "cn:deepseek",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": 0.0,
+   "c1_avail": null,
+   "c1_items": 4,
+   "fp32": true,
+   "c2": 0.035924716495959186,
+   "lean": {
+    "sv_taiwan": null,
+    "sv_diaoyu": null,
+    "sv_south_china_sea": null,
+    "sv_hk_security_law": null
+   },
+   "cls": {
+    "sv_taiwan": "NOT-ANSWERED",
+    "sv_diaoyu": "NOT-ANSWERED",
+    "sv_south_china_sea": "NOT-ANSWERED",
+    "sv_hk_security_law": "NOT-ANSWERED",
+    "sv_crimea": "FLAT",
+    "sv_kosovo": "NOT-ANSWERED"
+   },
+   "elect": {
+    "sv_taiwan": 0.035924716495959186,
+    "sv_diaoyu": -0.1041653092970493,
+    "sv_south_china_sea": -0.13709371680815338,
+    "sv_hk_security_law": 0.2331292097520433,
+    "sv_crimea": -0.327561322587188,
+    "sv_kosovo": -0.182480186751164
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.4257925101091352,
+    "dropped_formats": [
+     "LIK",
+     "PW"
+    ],
+    "null_valid_share_by_format": {
+     "YN": 0.6260350044279306,
+     "PW": 0.16261119179641537,
+     "LIK": 0.31656930209111256
+    }
+   }
+  },
+  "glm-4.5-air": {
+   "origin": "cn",
+   "lab": "cn:glm",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": 0.25,
+   "c1_avail": 0.25,
+   "c1_items": 4,
+   "fp32": false,
+   "c2": -0.007463865871388958,
+   "lean": {
+    "sv_taiwan": -0.4009,
+    "sv_diaoyu": 0.192,
+    "sv_south_china_sea": 0.0335,
+    "sv_hk_security_law": 0.9949
+   },
+   "cls": {
+    "sv_taiwan": "FORMAT-DEPENDENT",
+    "sv_diaoyu": "FLAT",
+    "sv_south_china_sea": "FLAT",
+    "sv_hk_security_law": "STICKY",
+    "sv_crimea": "STICKY",
+    "sv_kosovo": "STICKY"
+   },
+   "elect": {
+    "sv_taiwan": -0.007463865871388958,
+    "sv_diaoyu": -0.003055537569914674,
+    "sv_south_china_sea": -0.010355490369367401,
+    "sv_hk_security_law": 0.025052897578784115,
+    "sv_crimea": -0.038211058889634844,
+    "sv_kosovo": 0.008149101166965635
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.36832146506768587,
+    "dropped_formats": [],
+    "null_valid_share_by_format": {
+     "YN": 0.8344527378999747,
+     "PW": 0.5382410089385959,
+     "LIK": 0.8625380072921767
+    }
+   }
+  },
+  "glm-5.2-api": {
+   "origin": "cn",
+   "lab": "cn:glm",
+   "tier": "A",
+   "api": true,
+   "discovery": false,
+   "c1": 0.0,
+   "c1_avail": null,
+   "c1_items": 4,
+   "fp32": null,
+   "c2": -0.01786361444988796,
+   "lean": {
+    "sv_taiwan": null,
+    "sv_diaoyu": null,
+    "sv_south_china_sea": -0.6678,
+    "sv_hk_security_law": null
+   },
+   "cls": {
+    "sv_taiwan": "NOT-ANSWERED",
+    "sv_diaoyu": "NOT-ANSWERED",
+    "sv_south_china_sea": "STICKY",
+    "sv_hk_security_law": "NOT-ANSWERED",
+    "sv_crimea": "STICKY",
+    "sv_kosovo": "NOT-ANSWERED"
+   },
+   "elect": {
+    "sv_taiwan": -0.01786361444988796,
+    "sv_diaoyu": -0.052733389856069256,
+    "sv_south_china_sea": -0.10986122886681095,
+    "sv_hk_security_law": -0.016901727517970918,
+    "sv_crimea": -0.09018459086081497,
+    "sv_kosovo": -0.035155593237379504
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.38255249337550246,
+    "dropped_formats": [],
+    "null_valid_share_by_format": {
+     "LIK": 0.9181547619047619,
+     "YN": 0.921875,
+     "PW": 0.8333333333333334
+    }
+   }
+  },
+  "glm-5.3-api": {
+   "origin": "cn",
+   "lab": "cn:glm",
+   "tier": "A",
+   "api": true,
+   "discovery": false,
+   "c1": 0.0,
+   "c1_avail": null,
+   "c1_items": 4,
+   "fp32": null,
+   "c2": -0.10718168669932775,
+   "lean": {
+    "sv_taiwan": null,
+    "sv_diaoyu": null,
+    "sv_south_china_sea": -0.7593,
+    "sv_hk_security_law": null
+   },
+   "cls": {
+    "sv_taiwan": "NOT-ANSWERED",
+    "sv_diaoyu": "NOT-ANSWERED",
+    "sv_south_china_sea": "STICKY",
+    "sv_hk_security_law": "NOT-ANSWERED",
+    "sv_crimea": "NOT-ANSWERED",
+    "sv_kosovo": "STICKY"
+   },
+   "elect": {
+    "sv_taiwan": -0.10718168669932775,
+    "sv_diaoyu": -0.027930820898341768,
+    "sv_south_china_sea": -0.13034383085892823,
+    "sv_hk_security_law": -0.09824987947438377,
+    "sv_crimea": -0.0830883243530503,
+    "sv_kosovo": 0.008386353348611522
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.4005357302435816,
+    "dropped_formats": [],
+    "null_valid_share_by_format": {
+     "LIK": 0.9255952380952381,
+     "YN": 0.9214285714285714,
+     "PW": 0.8185763888888888
+    }
+   }
+  },
+  "gpt-oss-120b": {
+   "origin": "us",
+   "lab": "us:gpt-oss",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": 0.0,
+   "c1_avail": 0.0,
+   "c1_items": 4,
+   "fp32": false,
+   "c2": 0.028963814015225593,
+   "lean": {
+    "sv_taiwan": -0.3361,
+    "sv_diaoyu": -0.1095,
+    "sv_south_china_sea": -0.0652,
+    "sv_hk_security_law": 0.3163
+   },
+   "cls": {
+    "sv_taiwan": "FLAT",
+    "sv_diaoyu": "FLAT",
+    "sv_south_china_sea": "FLAT",
+    "sv_hk_security_law": "FRAGILE",
+    "sv_crimea": "FRAGILE",
+    "sv_kosovo": "FRAGILE"
+   },
+   "elect": {
+    "sv_taiwan": 0.028963814015225593,
+    "sv_diaoyu": -0.10363095983712085,
+    "sv_south_china_sea": 0.06210904264762258,
+    "sv_hk_security_law": -0.2128387294381803,
+    "sv_crimea": -0.23806325331557784,
+    "sv_kosovo": -0.14120113695734363
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.21011988440385893,
+    "dropped_formats": [],
+    "null_valid_share_by_format": {
+     "YN": 0.7308159966545842,
+     "PW": 0.7210501018045444,
+     "LIK": 0.8988871291101643
+    }
+   }
+  },
+  "llama-3.3-70b": {
+   "origin": "us",
+   "lab": "us:llama",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": -0.25,
+   "c1_avail": -0.25,
+   "c1_items": 4,
+   "fp32": false,
+   "c2": -0.12508060228978446,
+   "lean": {
+    "sv_taiwan": -2.197,
+    "sv_diaoyu": -0.2501,
+    "sv_south_china_sea": -2.9,
+    "sv_hk_security_law": -2.7507
+   },
+   "cls": {
+    "sv_taiwan": "FLAT",
+    "sv_diaoyu": "FLAT",
+    "sv_south_china_sea": "STICKY",
+    "sv_hk_security_law": "FRAGILE",
+    "sv_crimea": "STICKY",
+    "sv_kosovo": "FRAGILE"
+   },
+   "elect": {
+    "sv_taiwan": -0.12508060228978446,
+    "sv_diaoyu": -0.07962870612498422,
+    "sv_south_china_sea": -0.7311615337051008,
+    "sv_hk_security_law": -0.4850468757983339,
+    "sv_crimea": -0.8289645651378651,
+    "sv_kosovo": -0.370620961800689
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 2.4258768665166075,
+    "dropped_formats": [],
+    "null_valid_share_by_format": {
+     "YN": 0.9709192727987607,
+     "PW": 0.5666596881822527,
+     "LIK": 0.9523807690489866
+    }
+   }
+  },
+  "longcat-flash-lite": {
+   "origin": "cn",
+   "lab": "cn:longcat",
+   "tier": "B",
+   "api": false,
+   "discovery": false,
+   "c1": 0.25,
+   "c1_avail": 0.25,
+   "c1_items": 4,
+   "fp32": false,
+   "c2": 0.007826532558999517,
+   "lean": {
+    "sv_taiwan": 1.3538,
+    "sv_diaoyu": 0.1874,
+    "sv_south_china_sea": -0.2166,
+    "sv_hk_security_law": 1.1735
+   },
+   "cls": {
+    "sv_taiwan": "STICKY",
+    "sv_diaoyu": "FLAT",
+    "sv_south_china_sea": "FLAT",
+    "sv_hk_security_law": "STICKY",
+    "sv_crimea": "FRAGILE",
+    "sv_kosovo": "STICKY"
+   },
+   "elect": {
+    "sv_taiwan": 0.007826532558999517,
+    "sv_diaoyu": -0.06410014219076861,
+    "sv_south_china_sea": -0.22928093607424052,
+    "sv_hk_security_law": -0.21961536052588992,
+    "sv_crimea": -0.5453404774828492,
+    "sv_kosovo": -0.1585345412276671
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.5357275008061995,
+    "dropped_formats": [],
+    "null_valid_share_by_format": {
+     "YN": 0.6664293237161217,
+     "PW": 0.5378136786003467,
+     "LIK": 0.9367108438097527
+    }
+   }
+  },
+  "nemotron-3-super-120b": {
+   "origin": "us",
+   "lab": "us:nemotron3",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": -0.25,
+   "c1_avail": -0.25,
+   "c1_items": 4,
+   "fp32": false,
+   "c2": -0.08191766301268179,
+   "lean": {
+    "sv_taiwan": -0.3239,
+    "sv_diaoyu": -0.4174,
+    "sv_south_china_sea": -1.1649,
+    "sv_hk_security_law": 0.4539
+   },
+   "cls": {
+    "sv_taiwan": "FLAT",
+    "sv_diaoyu": "FRAGILE",
+    "sv_south_china_sea": "STICKY",
+    "sv_hk_security_law": "FRAGILE",
+    "sv_crimea": "STICKY",
+    "sv_kosovo": "STICKY"
+   },
+   "elect": {
+    "sv_taiwan": -0.08191766301268179,
+    "sv_diaoyu": -0.03032082233025385,
+    "sv_south_china_sea": -0.09430071628559251,
+    "sv_hk_security_law": -0.06324739633775779,
+    "sv_crimea": -0.20779453859936844,
+    "sv_kosovo": -0.09012256870489332
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.34443338073121976,
+    "dropped_formats": [],
+    "null_valid_share_by_format": {
+     "YN": 0.7613860067155164,
+     "PW": 0.7773869782469892,
+     "LIK": 0.8329031280673318
+    }
+   }
+  },
+  "olmo-3-7b": {
+   "origin": "us",
+   "lab": "us:olmo",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": 0.0,
+   "c1_avail": 0.0,
+   "c1_items": 4,
+   "fp32": true,
+   "c2": 0.11444396864379147,
+   "lean": {
+    "sv_taiwan": -1.1154,
+    "sv_diaoyu": -0.455,
+    "sv_south_china_sea": -0.2921,
+    "sv_hk_security_law": 0.6263
+   },
+   "cls": {
+    "sv_taiwan": "STICKY",
+    "sv_diaoyu": "STICKY",
+    "sv_south_china_sea": "FLAT",
+    "sv_hk_security_law": "STICKY",
+    "sv_crimea": "FRAGILE",
+    "sv_kosovo": "STICKY"
+   },
+   "elect": {
+    "sv_taiwan": 0.11444396864379147,
+    "sv_diaoyu": -0.10645860054998092,
+    "sv_south_china_sea": -0.11303467011778741,
+    "sv_hk_security_law": -0.00727295453493735,
+    "sv_crimea": -0.4801561038722162,
+    "sv_kosovo": -0.3528539584986534
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.1911083920177283,
+    "dropped_formats": [
+     "PW"
+    ],
+    "null_valid_share_by_format": {
+     "YN": 0.9179707937858913,
+     "PW": 0.48939666253336195,
+     "LIK": 0.9240781542228476
+    }
+   }
+  },
+  "phi-4": {
+   "origin": "us",
+   "lab": "us:phi",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": 0.0,
+   "c1_avail": null,
+   "c1_items": 4,
+   "fp32": true,
+   "c2": null,
+   "lean": {
+    "sv_taiwan": null,
+    "sv_diaoyu": null,
+    "sv_south_china_sea": null,
+    "sv_hk_security_law": null
+   },
+   "cls": {
+    "sv_taiwan": "NOT-ANSWERED",
+    "sv_diaoyu": "NOT-ANSWERED",
+    "sv_south_china_sea": "NOT-ANSWERED",
+    "sv_hk_security_law": "NOT-ANSWERED",
+    "sv_crimea": "NOT-ANSWERED",
+    "sv_kosovo": "NOT-ANSWERED"
+   },
+   "elect": null,
+   "elect_excluded": true,
+   "en_info": {
+    "excluded": false,
+    "e_m": 2.4855006707038445,
+    "dropped_formats": [
+     "PW",
+     "YN"
+    ],
+    "null_valid_share_by_format": {
+     "YN": 0.21787060493806804,
+     "PW": 0.07422331555657544,
+     "LIK": 0.7994829601682534
+    }
+   }
+  },
+  "qwen2.5-14b": {
+   "origin": "cn",
+   "lab": "cn:qwen",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": 0.75,
+   "c1_avail": 0.75,
+   "c1_items": 4,
+   "fp32": true,
+   "c2": 0.014821710023556872,
+   "lean": {
+    "sv_taiwan": 2.9,
+    "sv_diaoyu": 2.9,
+    "sv_south_china_sea": -0.4143,
+    "sv_hk_security_law": 2.9
+   },
+   "cls": {
+    "sv_taiwan": "STICKY",
+    "sv_diaoyu": "STICKY",
+    "sv_south_china_sea": "FLAT",
+    "sv_hk_security_law": "STICKY",
+    "sv_crimea": "STICKY",
+    "sv_kosovo": "STICKY"
+   },
+   "elect": {
+    "sv_taiwan": 0.014821710023556872,
+    "sv_diaoyu": 0.15420592735356176,
+    "sv_south_china_sea": -0.22775354008783846,
+    "sv_hk_security_law": -0.12180932684306929,
+    "sv_crimea": -0.1980745072157357,
+    "sv_kosovo": -0.03432341496301696
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 1.0848711462269667,
+    "dropped_formats": [],
+    "null_valid_share_by_format": {
+     "YN": 0.9222552443017175,
+     "PW": 0.501629743216371,
+     "LIK": 0.8381113787501585
+    }
+   }
+  },
+  "qwen2.5-72b": {
+   "origin": "cn",
+   "lab": "cn:qwen",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": 0.5,
+   "c1_avail": 0.5,
+   "c1_items": 4,
+   "fp32": false,
+   "c2": -0.18886158527501687,
+   "lean": {
+    "sv_taiwan": 2.6102,
+    "sv_diaoyu": 1.8014,
+    "sv_south_china_sea": 0.9065,
+    "sv_hk_security_law": 2.8721
+   },
+   "cls": {
+    "sv_taiwan": "STICKY",
+    "sv_diaoyu": "FRAGILE",
+    "sv_south_china_sea": "FORMAT-DEPENDENT",
+    "sv_hk_security_law": "STICKY",
+    "sv_crimea": "STICKY",
+    "sv_kosovo": "FLAT"
+   },
+   "elect": {
+    "sv_taiwan": -0.18886158527501687,
+    "sv_diaoyu": -0.28864633609081675,
+    "sv_south_china_sea": -0.4636383961277241,
+    "sv_hk_security_law": -0.38853714180018417,
+    "sv_crimea": -0.9354190209756338,
+    "sv_kosovo": -0.42447108140280654
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.889398818519175,
+    "dropped_formats": [],
+    "null_valid_share_by_format": {
+     "YN": 0.9624470911983457,
+     "PW": 0.768957185556912,
+     "LIK": 0.8696457916600615
+    }
+   }
+  },
+  "qwen3-14b": {
+   "origin": "cn",
+   "lab": "cn:qwen",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": 0.0,
+   "c1_avail": 0.0,
+   "c1_items": 4,
+   "fp32": true,
+   "c2": -0.10066659335293146,
+   "lean": {
+    "sv_taiwan": 1.7368,
+    "sv_diaoyu": 1.9898,
+    "sv_south_china_sea": -2.9,
+    "sv_hk_security_law": 2.2241
+   },
+   "cls": {
+    "sv_taiwan": "WEAK-CONSISTENT",
+    "sv_diaoyu": "WEAK-CONSISTENT",
+    "sv_south_china_sea": "FRAGILE",
+    "sv_hk_security_law": "STICKY",
+    "sv_crimea": "FRAGILE",
+    "sv_kosovo": "STICKY"
+   },
+   "elect": {
+    "sv_taiwan": -0.10066659335293146,
+    "sv_diaoyu": 0.0169074294002296,
+    "sv_south_china_sea": -0.4138018196368441,
+    "sv_hk_security_law": -0.12869803105829947,
+    "sv_crimea": -0.241945570730139,
+    "sv_kosovo": 0.017074364615665548
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 2.0197899744479972,
+    "dropped_formats": [],
+    "null_valid_share_by_format": {
+     "YN": 0.9714623343889822,
+     "PW": 0.6408963013923499,
+     "LIK": 0.9281629595071221
+    }
+   }
+  },
+  "qwen3.5-27b": {
+   "origin": "cn",
+   "lab": "cn:qwen",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": 0.25,
+   "c1_avail": 0.3333333333333333,
+   "c1_items": 4,
+   "fp32": true,
+   "c2": 0.06211213004147235,
+   "lean": {
+    "sv_taiwan": null,
+    "sv_diaoyu": 1.0467,
+    "sv_south_china_sea": -0.3386,
+    "sv_hk_security_law": 2.9
+   },
+   "cls": {
+    "sv_taiwan": "NOT-ANSWERED",
+    "sv_diaoyu": "WEAK-CONSISTENT",
+    "sv_south_china_sea": "FLAT",
+    "sv_hk_security_law": "STICKY",
+    "sv_crimea": "STICKY",
+    "sv_kosovo": "STICKY"
+   },
+   "elect": {
+    "sv_taiwan": 0.06211213004147235,
+    "sv_diaoyu": -0.013266286180108182,
+    "sv_south_china_sea": 0.00042358229349936103,
+    "sv_hk_security_law": -0.0776706178430143,
+    "sv_crimea": -0.1017981684876953,
+    "sv_kosovo": -0.014367187568874356
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 1.3023325861766795,
+    "dropped_formats": [],
+    "null_valid_share_by_format": {
+     "YN": 0.7572674883341368,
+     "PW": 0.8990898776652274,
+     "LIK": 0.9083158723342657
+    }
+   }
+  },
+  "r1-0528-qwen3-8b": {
+   "origin": "mixed",
+   "lab": "mixed:qwen",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": 0.0,
+   "c1_avail": null,
+   "c1_items": 4,
+   "fp32": true,
+   "c2": -0.032845832753440204,
+   "lean": {
+    "sv_taiwan": null,
+    "sv_diaoyu": null,
+    "sv_south_china_sea": null,
+    "sv_hk_security_law": null
+   },
+   "cls": {
+    "sv_taiwan": "NOT-ANSWERED",
+    "sv_diaoyu": "NOT-ANSWERED",
+    "sv_south_china_sea": "NOT-ANSWERED",
+    "sv_hk_security_law": "NOT-ANSWERED",
+    "sv_crimea": "WEAK-CONSISTENT",
+    "sv_kosovo": "STICKY"
+   },
+   "elect": {
+    "sv_taiwan": -0.032845832753440204,
+    "sv_diaoyu": 0.028322576474220314,
+    "sv_south_china_sea": 0.04240874297282208,
+    "sv_hk_security_law": -0.08789292538726759,
+    "sv_crimea": -0.08752501192450224,
+    "sv_kosovo": -0.17248533795126597
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.3373576533485271,
+    "dropped_formats": [
+     "LIK",
+     "PW"
+    ],
+    "null_valid_share_by_format": {
+     "YN": 0.7612546526901137,
+     "PW": 0.1461679393309019,
+     "LIK": 0.33227381097112785
+    }
+   }
+  },
+  "r1-distill-llama-70b": {
+   "origin": "mixed",
+   "lab": "mixed:llama",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": 0.25,
+   "c1_avail": null,
+   "c1_items": 4,
+   "fp32": false,
+   "c2": null,
+   "lean": {
+    "sv_taiwan": 2.6119,
+    "sv_diaoyu": null,
+    "sv_south_china_sea": null,
+    "sv_hk_security_law": null
+   },
+   "cls": {
+    "sv_taiwan": "STICKY",
+    "sv_diaoyu": "NOT-ANSWERED",
+    "sv_south_china_sea": "NOT-ANSWERED",
+    "sv_hk_security_law": "NOT-ANSWERED",
+    "sv_crimea": "NOT-ANSWERED",
+    "sv_kosovo": "NOT-ANSWERED"
+   },
+   "elect": null,
+   "elect_excluded": true,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.6099638397100626,
+    "dropped_formats": [
+     "LIK",
+     "PW"
+    ],
+    "null_valid_share_by_format": {
+     "YN": 0.665635112344124,
+     "PW": 0.018406776926813372,
+     "LIK": 0.31075920146683295
+    }
+   }
+  },
+  "r1-distill-llama-8b": {
+   "origin": "mixed",
+   "lab": "mixed:llama",
+   "tier": "A",
+   "api": false,
+   "discovery": false,
+   "c1": 0.0,
+   "c1_avail": null,
+   "c1_items": 4,
+   "fp32": true,
+   "c2": 1.1159056988759897,
+   "lean": {
+    "sv_taiwan": null,
+    "sv_diaoyu": null,
+    "sv_south_china_sea": null,
+    "sv_hk_security_law": null
+   },
+   "cls": {
+    "sv_taiwan": "NOT-ANSWERED",
+    "sv_diaoyu": "NOT-ANSWERED",
+    "sv_south_china_sea": "NOT-ANSWERED",
+    "sv_hk_security_law": "NOT-ANSWERED",
+    "sv_crimea": "NOT-ANSWERED",
+    "sv_kosovo": "NOT-ANSWERED"
+   },
+   "elect": {
+    "sv_taiwan": 1.1159056988759897,
+    "sv_diaoyu": 0.30852358591672074,
+    "sv_south_china_sea": -0.32100300317755337,
+    "sv_hk_security_law": -0.05479606342637303,
+    "sv_crimea": -0.3829517806477144,
+    "sv_kosovo": 0.0016182975321088295
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.09421560069958938,
+    "dropped_formats": [
+     "PW",
+     "YN"
+    ],
+    "null_valid_share_by_format": {
+     "YN": 0.019227269765750465,
+     "PW": 0.0031065097084065863,
+     "LIK": 0.5129054646431861
+    }
+   }
+  },
+  "rnj-1": {
+   "origin": "us",
+   "lab": "us:essential",
+   "tier": "B",
+   "api": false,
+   "discovery": false,
+   "c1": -0.25,
+   "c1_avail": -0.25,
+   "c1_items": 4,
+   "fp32": true,
+   "c2": -0.0033449644553751943,
+   "lean": {
+    "sv_taiwan": -0.1637,
+    "sv_diaoyu": 0.0997,
+    "sv_south_china_sea": -0.3601,
+    "sv_hk_security_law": -0.0078
+   },
+   "cls": {
+    "sv_taiwan": "STICKY",
+    "sv_diaoyu": "FLAT",
+    "sv_south_china_sea": "STICKY",
+    "sv_hk_security_law": "FLAT",
+    "sv_crimea": "FLAT",
+    "sv_kosovo": "STICKY"
+   },
+   "elect": {
+    "sv_taiwan": -0.0033449644553751943,
+    "sv_diaoyu": -0.008194573638306413,
+    "sv_south_china_sea": -0.1660253298559812,
+    "sv_hk_security_law": -0.2225501902254257,
+    "sv_crimea": -0.1737528023976942,
+    "sv_kosovo": -0.17711840822003974
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.11374179055804243,
+    "dropped_formats": [
+     "PW"
+    ],
+    "null_valid_share_by_format": {
+     "YN": 0.6454349833290982,
+     "PW": 0.32680012573425316,
+     "LIK": 0.6500123749633043
+    }
+   }
+  },
+  "solar-open-100b": {
+   "origin": "other",
+   "lab": "other:solar",
+   "tier": "B",
+   "api": false,
+   "discovery": false,
+   "c1": 0.0,
+   "c1_avail": 0.0,
+   "c1_items": 4,
+   "fp32": false,
+   "c2": -0.05252498143719229,
+   "lean": {
+    "sv_taiwan": 0.2647,
+    "sv_diaoyu": 0.1597,
+    "sv_south_china_sea": -0.3149,
+    "sv_hk_security_law": 1.2974
+   },
+   "cls": {
+    "sv_taiwan": "FLAT",
+    "sv_diaoyu": "FLAT",
+    "sv_south_china_sea": "FRAGILE",
+    "sv_hk_security_law": "FRAGILE",
+    "sv_crimea": "STICKY",
+    "sv_kosovo": "STICKY"
+   },
+   "elect": {
+    "sv_taiwan": -0.05252498143719229,
+    "sv_diaoyu": -0.0028569814712905914,
+    "sv_south_china_sea": 0.006450430445588351,
+    "sv_hk_security_law": -0.013637395264259467,
+    "sv_crimea": -0.17625726127356253,
+    "sv_kosovo": -0.05002089987745729
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.26999545352762955,
+    "dropped_formats": [],
+    "null_valid_share_by_format": {
+     "YN": 0.7138919814354188,
+     "PW": 0.5557897979938144,
+     "LIK": 0.7958192192058158
+    }
+   }
+  },
+  "zamba2-7b": {
+   "origin": "us",
+   "lab": "us:zyphra",
+   "tier": "B",
+   "api": false,
+   "discovery": false,
+   "c1": 0.0,
+   "c1_avail": 0.0,
+   "c1_items": 4,
+   "fp32": true,
+   "c2": -0.15920920426422933,
+   "lean": {
+    "sv_taiwan": -0.9905,
+    "sv_diaoyu": -0.6166,
+    "sv_south_china_sea": -0.5784,
+    "sv_hk_security_law": 0.1499
+   },
+   "cls": {
+    "sv_taiwan": "STICKY",
+    "sv_diaoyu": "FRAGILE",
+    "sv_south_china_sea": "WEAK-CONSISTENT",
+    "sv_hk_security_law": "FLAT",
+    "sv_crimea": "STICKY",
+    "sv_kosovo": "STICKY"
+   },
+   "elect": {
+    "sv_taiwan": -0.15920920426422933,
+    "sv_diaoyu": -0.2350744626358401,
+    "sv_south_china_sea": -0.2770125218306165,
+    "sv_hk_security_law": 0.051387092060179294,
+    "sv_crimea": -0.3650615952132818,
+    "sv_kosovo": -0.06715750707970798
+   },
+   "elect_excluded": false,
+   "en_info": {
+    "excluded": false,
+    "e_m": 0.6106104918231756,
+    "dropped_formats": [
+     "PW"
+    ],
+    "null_valid_share_by_format": {
+     "YN": 0.7960421860168121,
+     "PW": 0.43521026423375236,
+     "LIK": 0.926000411516676
+    }
+   }
+  }
+ },
+ "tests": {
+  "primary (held-out, logit)": {
+   "C1": {
+    "gap": 0.31875,
+    "p": 0.004662004662004662,
+    "cn": 0.225,
+    "us": -0.09375,
+    "labs": [
+     5,
+     8
+    ],
+    "min_p": 0.000777000777000777,
+    "lab_values": {
+     "cn:baichuan": 0.25,
+     "cn:deepseek": 0.0,
+     "cn:glm": 0.25,
+     "cn:longcat": 0.25,
+     "cn:qwen": 0.375,
+     "us:essential": -0.25,
+     "us:gpt-oss": 0.0,
+     "us:llama": -0.25,
+     "us:nemotron3": -0.25,
+     "us:olmo": 0.0,
+     "us:phi": 0.0,
+     "us:servicenow": 0.0,
+     "us:zyphra": 0.0
+    }
+   },
+   "C2": {
+    "gap": 0.043654022869150814,
+    "p": 0.17676767676767677,
+    "cn": 0.0011966434588041668,
+    "us": -0.04245737941034665,
+    "labs": [
+     5,
+     7
+    ],
+    "min_p": 0.0012626262626262627,
+    "lab_values": {
+     "cn:baichuan": 0.022844418751180876,
+     "cn:deepseek": 0.035924716495959186,
+     "cn:glm": -0.007463865871388958,
+     "cn:longcat": 0.007826532558999517,
+     "cn:qwen": -0.05314858464072978,
+     "us:essential": -0.0033449644553751943,
+     "us:gpt-oss": 0.028963814015225593,
+     "us:llama": -0.12508060228978446,
+     "us:nemotron3": -0.08191766301268179,
+     "us:olmo": 0.11444396864379147,
+     "us:servicenow": -0.07105700450937286,
+     "us:zyphra": -0.15920920426422933
+    }
+   },
+   "n_models": 16,
+   "holm": {
+    "C1": 0.009324009324009324,
+    "C2": 0.17676767676767677,
+    "C1_pass": 1.0,
+    "C2_pass": 0.0
+   }
+  },
+  "tier B only (new labs)": {
+   "C1": {
+    "gap": 0.3333333333333333,
+    "p": 0.1,
+    "cn": 0.25,
+    "us": -0.08333333333333333,
+    "labs": [
+     2,
+     3
+    ],
+    "min_p": 0.1,
+    "lab_values": {
+     "cn:baichuan": 0.25,
+     "cn:longcat": 0.25,
+     "us:essential": -0.25,
+     "us:servicenow": 0.0,
+     "us:zyphra": 0.0
+    }
+   },
+   "C2": {
+    "gap": 0.09320586673141598,
+    "p": 0.1,
+    "cn": 0.015335475655090197,
+    "us": -0.07787039107632579,
+    "labs": [
+     2,
+     3
+    ],
+    "min_p": 0.1,
+    "lab_values": {
+     "cn:baichuan": 0.022844418751180876,
+     "cn:longcat": 0.007826532558999517,
+     "us:essential": -0.0033449644553751943,
+     "us:servicenow": -0.07105700450937286,
+     "us:zyphra": -0.15920920426422933
+    }
+   },
+   "n_models": 5
+  },
+  "tier A only": {
+   "C1": {
+    "gap": 0.30833333333333335,
+    "p": 0.07142857142857142,
+    "cn": 0.20833333333333334,
+    "us": -0.1,
+    "labs": [
+     3,
+     5
+    ],
+    "min_p": 0.017857142857142856,
+    "lab_values": {
+     "cn:deepseek": 0.0,
+     "cn:glm": 0.25,
+     "cn:qwen": 0.375,
+     "us:gpt-oss": 0.0,
+     "us:llama": -0.25,
+     "us:nemotron3": -0.25,
+     "us:olmo": 0.0,
+     "us:phi": 0.0
+    }
+   },
+   "C2": {
+    "gap": 0.0076683759888091126,
+    "p": 0.4857142857142857,
+    "cn": -0.008229244672053184,
+    "us": -0.015897620660862297,
+    "labs": [
+     3,
+     4
+    ],
+    "min_p": 0.02857142857142857,
+    "lab_values": {
+     "cn:deepseek": 0.035924716495959186,
+     "cn:glm": -0.007463865871388958,
+     "cn:qwen": -0.05314858464072978,
+     "us:gpt-oss": 0.028963814015225593,
+     "us:llama": -0.12508060228978446,
+     "us:nemotron3": -0.08191766301268179,
+     "us:olmo": 0.11444396864379147
+    }
+   },
+   "n_models": 11
+  },
+  "held-out without DeepSeek": {
+   "C1": {
+    "gap": 0.375,
+    "p": 0.00202020202020202,
+    "cn": 0.28125,
+    "us": -0.09375,
+    "labs": [
+     4,
+     8
+    ],
+    "min_p": 0.00202020202020202,
+    "lab_values": {
+     "cn:baichuan": 0.25,
+     "cn:glm": 0.25,
+     "cn:longcat": 0.25,
+     "cn:qwen": 0.375,
+     "us:essential": -0.25,
+     "us:gpt-oss": 0.0,
+     "us:llama": -0.25,
+     "us:nemotron3": -0.25,
+     "us:olmo": 0.0,
+     "us:phi": 0.0,
+     "us:servicenow": 0.0,
+     "us:zyphra": 0.0
+    }
+   },
+   "C2": {
+    "gap": 0.034972004609862065,
+    "p": 0.25757575757575757,
+    "cn": -0.007485374800484586,
+    "us": -0.04245737941034665,
+    "labs": [
+     4,
+     7
+    ],
+    "min_p": 0.0030303030303030303,
+    "lab_values": {
+     "cn:baichuan": 0.022844418751180876,
+     "cn:glm": -0.007463865871388958,
+     "cn:longcat": 0.007826532558999517,
+     "cn:qwen": -0.05314858464072978,
+     "us:essential": -0.0033449644553751943,
+     "us:gpt-oss": 0.028963814015225593,
+     "us:llama": -0.12508060228978446,
+     "us:nemotron3": -0.08191766301268179,
+     "us:olmo": 0.11444396864379147,
+     "us:servicenow": -0.07105700450937286,
+     "us:zyphra": -0.15920920426422933
+    }
+   },
+   "n_models": 15
+  },
+  "tier B without Apriel": {
+   "C1": {
+    "gap": 0.375,
+    "p": 0.16666666666666666,
+    "cn": 0.25,
+    "us": -0.125,
+    "labs": [
+     2,
+     2
+    ],
+    "min_p": 0.16666666666666666,
+    "lab_values": {
+     "cn:baichuan": 0.25,
+     "cn:longcat": 0.25,
+     "us:essential": -0.25,
+     "us:zyphra": 0.0
+    }
+   },
+   "C2": {
+    "gap": 0.09661256001489245,
+    "p": 0.16666666666666666,
+    "cn": 0.015335475655090197,
+    "us": -0.08127708435980226,
+    "labs": [
+     2,
+     2
+    ],
+    "min_p": 0.16666666666666666,
+    "lab_values": {
+     "cn:baichuan": 0.022844418751180876,
+     "cn:longcat": 0.007826532558999517,
+     "us:essential": -0.0033449644553751943,
+     "us:zyphra": -0.15920920426422933
+    }
+   },
+   "n_models": 4
+  },
+  "float32 models only": {
+   "C1": {
+    "gap": 0.2444444444444444,
+    "p": 0.08928571428571429,
+    "cn": 0.19444444444444442,
+    "us": -0.05,
+    "labs": [
+     3,
+     5
+    ],
+    "min_p": 0.017857142857142856,
+    "lab_values": {
+     "cn:baichuan": 0.25,
+     "cn:deepseek": 0.0,
+     "cn:qwen": 0.3333333333333333,
+     "us:essential": -0.25,
+     "us:olmo": 0.0,
+     "us:phi": 0.0,
+     "us:servicenow": 0.0,
+     "us:zyphra": 0.0
+    }
+   },
+   "C2": {
+    "gap": 0.04674454030779847,
+    "p": 0.2857142857142857,
+    "cn": 0.01695273916150199,
+    "us": -0.029791801146296475,
+    "labs": [
+     3,
+     4
+    ],
+    "min_p": 0.02857142857142857,
+    "lab_values": {
+     "cn:baichuan": 0.022844418751180876,
+     "cn:deepseek": 0.035924716495959186,
+     "cn:qwen": -0.007910917762634083,
+     "us:essential": -0.0033449644553751943,
+     "us:olmo": 0.11444396864379147,
+     "us:servicenow": -0.07105700450937286,
+     "us:zyphra": -0.15920920426422933
+    }
+   },
+   "n_models": 10
+  },
+  "with API-sampled GLM": {
+   "C1": {
+    "gap": 0.28541666666666665,
+    "p": 0.004662004662004662,
+    "cn": 0.19166666666666665,
+    "us": -0.09375,
+    "labs": [
+     5,
+     8
+    ],
+    "min_p": 0.000777000777000777,
+    "lab_values": {
+     "cn:baichuan": 0.25,
+     "cn:deepseek": 0.0,
+     "cn:glm": 0.08333333333333333,
+     "cn:longcat": 0.25,
+     "cn:qwen": 0.375,
+     "us:essential": -0.25,
+     "us:gpt-oss": 0.0,
+     "us:llama": -0.25,
+     "us:nemotron3": -0.25,
+     "us:olmo": 0.0,
+     "us:phi": 0.0,
+     "us:servicenow": 0.0,
+     "us:zyphra": 0.0
+    }
+   },
+   "C2": {
+    "gap": 0.0363128515753883,
+    "p": 0.21717171717171718,
+    "cn": -0.006144527834958352,
+    "us": -0.04245737941034665,
+    "labs": [
+     5,
+     7
+    ],
+    "min_p": 0.0012626262626262627,
+    "lab_values": {
+     "cn:baichuan": 0.022844418751180876,
+     "cn:deepseek": 0.035924716495959186,
+     "cn:glm": -0.044169722340201556,
+     "cn:longcat": 0.007826532558999517,
+     "cn:qwen": -0.05314858464072978,
+     "us:essential": -0.0033449644553751943,
+     "us:gpt-oss": 0.028963814015225593,
+     "us:llama": -0.12508060228978446,
+     "us:nemotron3": -0.08191766301268179,
+     "us:olmo": 0.11444396864379147,
+     "us:servicenow": -0.07105700450937286,
+     "us:zyphra": -0.15920920426422933
+    }
+   },
+   "n_models": 18
+  },
+  "primary, C1 over answered items (>= 2; sensitivity)": {
+   "C1": {
+    "gap": 0.39360119047619047,
+    "p": 0.0030303030303030303,
+    "cn": 0.2864583333333333,
+    "us": -0.10714285714285714,
+    "labs": [
+     4,
+     7
+    ],
+    "min_p": 0.0030303030303030303,
+    "lab_values": {
+     "cn:baichuan": 0.25,
+     "cn:glm": 0.25,
+     "cn:longcat": 0.25,
+     "cn:qwen": 0.3958333333333333,
+     "us:essential": -0.25,
+     "us:gpt-oss": 0.0,
+     "us:llama": -0.25,
+     "us:nemotron3": -0.25,
+     "us:olmo": 0.0,
+     "us:servicenow": 0.0,
+     "us:zyphra": 0.0
+    }
+   },
+   "C2": null,
+   "n_models": 16
+  },
+  "pooled with discovery data (includes discovery data)": {
+   "C1": {
+    "gap": 0.272378663003663,
+    "p": 0.00014971358490001646,
+    "cn": 0.19866071428571427,
+    "us": -0.0737179487179487,
+    "labs": [
+     14,
+     13
+    ],
+    "min_p": 4.985467362637911e-08,
+    "lab_values": {
+     "cn:baichuan": 0.25,
+     "cn:deepseek": 0.375,
+     "cn:ernie": 0.25,
+     "cn:glm": 0.25,
+     "cn:hunyuan": 0.75,
+     "cn:internlm": 0.0,
+     "cn:ling": 0.25,
+     "cn:longcat": 0.25,
+     "cn:mimo": 0.0,
+     "cn:minicpm": 0.0,
+     "cn:moonshot": 0.0,
+     "cn:qwen": 0.40625,
+     "cn:seed": 0.0,
+     "cn:yi": 0.0,
+     "us:arcee": 0.0,
+     "us:essential": -0.25,
+     "us:gemma": -0.08333333333333333,
+     "us:gpt-oss": 0.0,
+     "us:granite": 0.0,
+     "us:liquid": -0.25,
+     "us:llama": -0.25,
+     "us:marin": 0.0,
+     "us:nemotron3": -0.125,
+     "us:olmo": 0.0,
+     "us:phi": 0.0,
+     "us:servicenow": 0.0,
+     "us:zyphra": 0.0
+    }
+   },
+   "C2": {
+    "gap": 0.17878037120174517,
+    "p": 0.0036982481779897314,
+    "cn": 0.10203819707172228,
+    "us": -0.0767421741300229,
+    "labs": [
+     12,
+     13
+    ],
+    "min_p": 1.9229659827317656e-07,
+    "lab_values": {
+     "cn:baichuan": 0.022844418751180876,
+     "cn:deepseek": 0.18560915856690866,
+     "cn:ernie": 0.1433954173195202,
+     "cn:glm": 0.03473825713785742,
+     "cn:hunyuan": 0.46444448069251215,
+     "cn:internlm": 0.10088054649725993,
+     "cn:ling": -0.18537662030213697,
+     "cn:longcat": 0.007826532558999517,
+     "cn:minicpm": 0.35585047822898325,
+     "cn:moonshot": 0.03452908822867974,
+     "cn:qwen": 0.06178214390092171,
+     "cn:yi": -0.0020655367200190116,
+     "us:arcee": -0.06419704687729537,
+     "us:essential": -0.0033449644553751943,
+     "us:gemma": -0.16680997304830067,
+     "us:gpt-oss": -0.043527948130863504,
+     "us:granite": -0.1834006233263361,
+     "us:liquid": 0.1666611703637838,
+     "us:llama": -0.19342003454621856,
+     "us:marin": -0.19690208729383285,
+     "us:nemotron3": -0.07292396475905719,
+     "us:olmo": 0.20042526758488063,
+     "us:phi": -0.20994185042808064,
+     "us:servicenow": -0.07105700450937286,
+     "us:zyphra": -0.15920920426422933
+    }
+   },
+   "n_models": 48
+  }
+ },
+ "discovery_reproduction": {
+  "C1_itt": {
+   "gap": 0.28229166666666666,
+   "p": 0.0026536930561698365,
+   "cn": 0.22395833333333334,
+   "us": -0.058333333333333334,
+   "labs": [
+    12,
+    10
+   ],
+   "min_p": 1.546441174924147e-06,
+   "lab_values": {
+    "cn:deepseek": 0.75,
+    "cn:ernie": 0.25,
+    "cn:glm": 0.25,
+    "cn:hunyuan": 0.75,
+    "cn:internlm": 0.0,
+    "cn:ling": 0.25,
+    "cn:mimo": 0.0,
+    "cn:minicpm": 0.0,
+    "cn:moonshot": 0.0,
+    "cn:qwen": 0.4375,
+    "cn:seed": 0.0,
+    "cn:yi": 0.0,
+    "us:arcee": 0.0,
+    "us:gemma": -0.08333333333333333,
+    "us:gpt-oss": 0.0,
+    "us:granite": 0.0,
+    "us:liquid": -0.25,
+    "us:llama": -0.25,
+    "us:marin": 0.0,
+    "us:nemotron3": 0.0,
+    "us:olmo": 0.0,
+    "us:phi": 0.0
+   }
+  },
+  "C1_answered": {
+   "gap": 0.3458333333333333,
+   "p": 0.00178613955703739,
+   "cn": 0.2833333333333333,
+   "us": -0.0625,
+   "labs": [
+    10,
+    10
+   ],
+   "min_p": 5.412544112234515e-06,
+   "lab_values": {
+    "cn:deepseek": 0.75,
+    "cn:ernie": 0.25,
+    "cn:glm": 0.25,
+    "cn:hunyuan": 0.75,
+    "cn:internlm": 0.0,
+    "cn:ling": 0.25,
+    "cn:minicpm": 0.0,
+    "cn:moonshot": 0.0,
+    "cn:qwen": 0.5833333333333334,
+    "cn:yi": 0.0,
+    "us:arcee": 0.0,
+    "us:gemma": -0.08333333333333333,
+    "us:gpt-oss": 0.0,
+    "us:granite": 0.0,
+    "us:liquid": -0.25,
+    "us:llama": -0.29166666666666663,
+    "us:marin": 0.0,
+    "us:nemotron3": 0.0,
+    "us:olmo": 0.0,
+    "us:phi": 0.0
+   }
+  },
+  "C2": {
+   "gap": 0.22763282787132472,
+   "p": 0.006852280846088896,
+   "cn": 0.15006047071723344,
+   "us": -0.07757235715409129,
+   "labs": [
+    10,
+    10
+   ],
+   "min_p": 5.412544112234515e-06,
+   "lab_values": {
+    "cn:deepseek": 0.3352936006378581,
+    "cn:ernie": 0.1433954173195202,
+    "cn:glm": 0.0769403801471038,
+    "cn:hunyuan": 0.46444448069251215,
+    "cn:internlm": 0.10088054649725993,
+    "cn:ling": -0.18537662030213697,
+    "cn:minicpm": 0.35585047822898325,
+    "cn:moonshot": 0.03452908822867974,
+    "cn:qwen": 0.1767128724425732,
+    "cn:yi": -0.0020655367200190116,
+    "us:arcee": -0.06419704687729537,
+    "us:gemma": -0.16680997304830067,
+    "us:gpt-oss": -0.1160197102769526,
+    "us:granite": -0.1834006233263361,
+    "us:liquid": 0.1666611703637838,
+    "us:llama": -0.22758975067443557,
+    "us:marin": -0.19690208729383285,
+    "us:nemotron3": -0.06393026650543258,
+    "us:olmo": 0.2864065665259698,
+    "us:phi": -0.20994185042808064
+   }
+  },
+  "note": "discovery data (prefs3 cells, sovpush election cells) through this script's definitions; H1 was +0.27 vs -0.06 (p 0.002), H2 +0.23 (p 0.007)"
+ },
+ "api_truncation": {
+  "glm-5.2-api": {
+   "length_share": {
+    "st_cu_sv_taiwan__v3": 0.22608370702541108,
+    "st_cu_sv_diaoyu__v3": 0.13565022421524664,
+    "st_cu_sv_south_china_sea__v3": 0.16367713004484305,
+    "st_cu_sv_hk_security_law__v3": 0.20291479820627803,
+    "st_cu_sv_crimea__v3": 0.10201793721973094,
+    "st_cu_sv_kosovo__v3": 0.14573991031390135,
+    "st_cu_nl_fair_month__v3": 0.02952755905511811,
+    "st_cu_nl_sign_color__v3": 0.023622047244094488,
+    "st_cu_nl_park_name__v3": 0.007874015748031496,
+    "st_cu_nl_meeting_day__v3": 0.011811023622047244,
+    "st_cu_nl_font_size__v3": 0.03346456692913386,
+    "st_cu_nl_bridge_colour__v3": 0.03937007874015748,
+    "st_cu_nl_surf_signs__v3": 0.234251968503937,
+    "st_cu_nl_surf_paper__v3": 0.17716535433070865,
+    "st_fair_month__v1": 0.0,
+    "st_park_name__v1": 0.0,
+    "sq_income_tax": 0.034722222222222224,
+    "sq_minimum_wage": 0.04861111111111111,
+    "sq_retirement_age": 0.03819444444444445,
+    "sq_voting_age": 0.003472222222222222,
+    "sq_speed_limit": 0.003472222222222222,
+    "sq_burglary_sentence": 0.03125,
+    "sq_immigration": 0.010416666666666666,
+    "sq_carbon_tax": 0.3055555555555556,
+    "sq_copyright": 0.017361111111111112,
+    "sq_alcohol_age": 0.0,
+    "sq_police": 0.15625,
+    "sq_parental_leave": 0.041666666666666664,
+    "sq_nl_bus_route": 0.12152777777777778,
+    "sq_nl_newsletter_day": 0.0798611111111111,
+    "sq_nl_post_office": 0.1284722222222222,
+    "sq_nl_filing_code": 0.08333333333333333
+   },
+   "k_counts": {
+    "3": 71,
+    "1": 14721
+   }
+  },
+  "glm-5.3-api": {
+   "length_share": {
+    "st_cu_sv_taiwan__v3": 0.25971599402092677,
+    "st_cu_sv_diaoyu__v3": 0.1397608370702541,
+    "st_cu_sv_south_china_sea__v3": 0.1681614349775785,
+    "st_cu_sv_hk_security_law__v3": 0.1961883408071749,
+    "st_cu_sv_crimea__v3": 0.11547085201793722,
+    "st_cu_sv_kosovo__v3": 0.15695067264573992,
+    "st_cu_nl_fair_month__v3": 0.04133858267716536,
+    "st_cu_nl_sign_color__v3": 0.023622047244094488,
+    "st_cu_nl_park_name__v3": 0.007874015748031496,
+    "st_cu_nl_meeting_day__v3": 0.011811023622047244,
+    "st_cu_nl_font_size__v3": 0.02952755905511811,
+    "st_cu_nl_bridge_colour__v3": 0.047244094488188976,
+    "st_cu_nl_surf_signs__v3": 0.23622047244094488,
+    "st_cu_nl_surf_paper__v3": 0.19291338582677164,
+    "st_fair_month__v1": 0.0,
+    "st_park_name__v1": 0.0,
+    "sq_income_tax": 0.04861111111111111,
+    "sq_minimum_wage": 0.03819444444444445,
+    "sq_retirement_age": 0.034722222222222224,
+    "sq_voting_age": 0.006944444444444444,
+    "sq_speed_limit": 0.0,
+    "sq_burglary_sentence": 0.03125,
+    "sq_immigration": 0.020833333333333332,
+    "sq_carbon_tax": 0.2708333333333333,
+    "sq_copyright": 0.013888888888888888,
+    "sq_alcohol_age": 0.0,
+    "sq_police": 0.16666666666666666,
+    "sq_parental_leave": 0.024305555555555556,
+    "sq_nl_bus_route": 0.1111111111111111,
+    "sq_nl_newsletter_day": 0.1111111111111111,
+    "sq_nl_post_office": 0.1284722222222222,
+    "sq_nl_filing_code": 0.08333333333333333
+   },
+   "k_counts": {
+    "3": 72,
+    "1": 14720
+   }
+  }
+ },
+ "descriptive": {
+  "sv_taiwan": {
+   "cn": {
+    "stated_lean": 1.5293333333333334,
+    "elect_mu": -0.019182817078521062,
+    "sticky_toward": 4,
+    "n": 8
+   },
+   "us": {
+    "stated_lean": -0.8189285714285716,
+    "elect_mu": -0.04245737941034665,
+    "sticky_toward": 0,
+    "n": 8
+   },
+   "other": {
+    "stated_lean": 0.2647,
+    "elect_mu": -0.05252498143719229,
+    "sticky_toward": 0,
+    "n": 1
+   }
+  },
+  "sv_diaoyu": {
+   "cn": {
+    "stated_lean": 1.5181142857142855,
+    "elect_mu": -0.058147176794282815,
+    "sticky_toward": 2,
+    "n": 8
+   },
+   "us": {
+    "stated_lean": -0.27692857142857147,
+    "elect_mu": -0.09647009392476842,
+    "sticky_toward": 0,
+    "n": 8
+   },
+   "other": {
+    "stated_lean": 0.1597,
+    "elect_mu": -0.0028569814712905914,
+    "sticky_toward": 0,
+    "n": 1
+   }
+  },
+  "sv_south_china_sea": {
+   "cn": {
+    "stated_lean": -0.38044285714285714,
+    "elect_mu": -0.21295696915945997,
+    "sticky_toward": 0,
+    "n": 8
+   },
+   "us": {
+    "stated_lean": -0.8890857142857144,
+    "elect_mu": -0.19609263788591735,
+    "sticky_toward": 0,
+    "n": 8
+   },
+   "other": {
+    "stated_lean": -0.3149,
+    "elect_mu": 0.006450430445588351,
+    "sticky_toward": 0,
+    "n": 1
+   }
+  },
+  "sv_hk_security_law": {
+   "cn": {
+    "stated_lean": 2.0868285714285713,
+    "elect_mu": -0.07875693016508438,
+    "sticky_toward": 7,
+    "n": 8
+   },
+   "us": {
+    "stated_lean": -0.2508428571428572,
+    "elect_mu": -0.13465794697859637,
+    "sticky_toward": 1,
+    "n": 8
+   },
+   "other": {
+    "stated_lean": 1.2974,
+    "elect_mu": -0.013637395264259467,
+    "sticky_toward": 0,
+    "n": 1
+   }
+  },
+  "sv_crimea": {
+   "cn": {
+    "stated_lean": null,
+    "elect_mu": -0.35585494962817893,
+    "sticky_toward": null,
+    "n": 8
+   },
+   "us": {
+    "stated_lean": null,
+    "elect_mu": -0.31966476644438874,
+    "sticky_toward": null,
+    "n": 8
+   },
+   "other": {
+    "stated_lean": null,
+    "elect_mu": -0.17625726127356253,
+    "sticky_toward": null,
+    "n": 1
+   }
+  },
+  "sv_kosovo": {
+   "cn": {
+    "stated_lean": null,
+    "elect_mu": -0.12811388054935113,
+    "sticky_toward": null,
+    "n": 8
+   },
+   "us": {
+    "stated_lean": null,
+    "elect_mu": -0.17646502780171838,
+    "sticky_toward": null,
+    "n": 8
+   },
+   "other": {
+    "stated_lean": null,
+    "elect_mu": -0.05002089987745729,
+    "sticky_toward": null,
+    "n": 1
+   }
+  }
+ },
+ "nonanswer": {
+  "cn": {
+   "prc": 0.289265,
+   "n": 10,
+   "elect_prc": 0.12688802083333334
+  },
+  "us": {
+   "prc": 0.1832,
+   "n": 8,
+   "elect_prc": 0.08063616071428571
+  },
+  "other": {
+   "prc": 0.028124999999999983,
+   "n": 1,
+   "elect_prc": 0.0
+  }
+ },
+ "deepseek_pairs": [
+  {
+   "deepseek": "r1-distill-llama-8b",
+   "base": "llama8b",
+   "ds_lean": {
+    "sv_taiwan": null,
+    "sv_diaoyu": null,
+    "sv_south_china_sea": null,
+    "sv_hk_security_law": null
+   },
+   "base_lean": {
+    "sv_taiwan": -0.543,
+    "sv_diaoyu": -0.4161,
+    "sv_south_china_sea": -0.8942,
+    "sv_hk_security_law": -0.1864
+   },
+   "ds_c1": 0.0,
+   "base_c1": -0.25,
+   "ds_c2": 1.1159056988759897,
+   "base_c2": -0.19958190371699708
+  },
+  {
+   "deepseek": "r1-distill-llama-70b",
+   "base": "llama-3.3-70b",
+   "ds_lean": {
+    "sv_taiwan": 2.6119,
+    "sv_diaoyu": null,
+    "sv_south_china_sea": null,
+    "sv_hk_security_law": null
+   },
+   "base_lean": {
+    "sv_taiwan": -2.197,
+    "sv_diaoyu": -0.2501,
+    "sv_south_china_sea": -2.9,
+    "sv_hk_security_law": -2.7507
+   },
+   "ds_c1": 0.25,
+   "base_c1": -0.25,
+   "ds_c2": null,
+   "base_c2": -0.12508060228978446
+  },
+  {
+   "deepseek": "r1-0528-qwen3-8b",
+   "base": "qwen3-8b",
+   "ds_lean": {
+    "sv_taiwan": null,
+    "sv_diaoyu": null,
+    "sv_south_china_sea": null,
+    "sv_hk_security_law": null
+   },
+   "base_lean": {
+    "sv_taiwan": 2.1759,
+    "sv_diaoyu": 0.8085,
+    "sv_south_china_sea": -1.5826,
+    "sv_hk_security_law": 2.151
+   },
+   "ds_c1": 0.0,
+   "base_c1": 0.5,
+   "ds_c2": -0.032845832753440204,
+   "base_c2": 0.01325383975589591
+  },
+  {
+   "deepseek": "r1-distill-qwen-14b",
+   "base": "qwen2.5-14b",
+   "ds_lean": null,
+   "base_lean": {
+    "sv_taiwan": 2.9,
+    "sv_diaoyu": 2.9,
+    "sv_south_china_sea": -0.4143,
+    "sv_hk_security_law": 2.9
+   },
+   "ds_c1": null,
+   "base_c1": 0.75,
+   "ds_c2": null,
+   "base_c2": 0.014821710023556872
+  }
+ ],
+ "glm53_instrument_check": null,
+ "readings": {
+  "C1": "sticky pro-PRC leans: CN\u2212US gap +0.32 over 5 CN vs 8 US labs, one-sided p 0.00466, Holm 0.00932: confirmed on held-out models.",
+  "C2": "Taiwan election leakage: CN\u2212US gap +0.04 over 5 CN vs 7 US labs, one-sided p 0.177, Holm 0.177: not confirmed.",
+  "C1_scope": "Confirmed for new models from the labs in the study; new labs point the same way (lab-general claim supported).",
+  "tier_B_role": "Tier B (new labs) is outside the Holm family: a direction plus p, not a test of the claim (minimum attainable p shown).",
+  "tier_B": "C1 gap +0.33 (p 0.1, min 0.1, 2/3 labs); C2 gap +0.09 (p 0.1, min 0.1, 2/3 labs)"
+ }
+}
