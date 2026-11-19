@@ -3,8 +3,8 @@ apriel-5b,us,logit,-0.606,0.0,FLAT,False,True,1.052,1.0
 baichuan2-13b,cn,logit,0.976,0.7545,STICKY,False,True,0.693,1.0
 deepseek-7b,cn,logit,0.847,0.0073,NOT-ANSWERED,False,False,0.426,0.2188
 glm-4.5-air,cn,logit,-0.401,0.0,FORMAT-DEPENDENT,False,True,0.368,0.9125
-glm-5.2-api,cn,api_sampled,0.055,0.0,NOT-ANSWERED,False,False,0.383,0.125
-glm-5.3-api,cn,api_sampled,0.055,0.0,NOT-ANSWERED,False,False,0.401,0.1875
+glm-5.2-api,cn,api,0.055,0.0,NOT-ANSWERED,False,False,0.383,0.125
+glm-5.3-api,cn,api,0.055,0.0,NOT-ANSWERED,False,False,0.401,0.1875
 gpt-oss-120b,us,logit,-0.336,0.0003,FLAT,False,True,0.21,0.6875
 llama-3.3-70b,us,logit,-2.197,0.0,FLAT,False,True,2.426,0.9
 longcat-flash-lite,cn,logit,1.354,1.0,STICKY,True,True,0.536,0.9

@@ -4,7 +4,7 @@ How do you tell a language model's real preference from an artefact of how a que
 
 We apply the method to one question where Chinese and US open-weight models were expected to differ: **unification of Taiwan with mainland China versus Taiwanese independence**.
 
-> **Status: preliminary (18 November 2026).** 22 of 24 planned model runs are complete. TeleChat-12B and the API-sampled GLM-5.2 and GLM-5.3 runs are still in progress. Numbers may shift slightly when they finish.
+> **Status: final confirmation results (18 November 2026).** All planned runs are complete. 22 models passed the pre-registered null-axis gate; six were excluded by it (including TeleChat-12B), as listed in [`results/sovconfirm.md`](results/sovconfirm.md).
 
 ![Opinion and stickiness on Taiwan, per model](results/figures/taiwan_mu_S_simple.png)
 
@@ -82,7 +82,6 @@ The code here is extracted from a larger research codebase and won't run on its 
 
 ## Caveats
 
-- **Preliminary:** two runs are still in progress (see the status note at the top).
 - **Only some kinds of variation are tested.** Stickiness measures robustness to the *kinds* of rewording in the battery. It says nothing about other languages, long conversations or persuasion.
 - **The two poles don't cover every position.** A model that prefers the status quo, rejecting both, sits near zero.
 - **What "PRC position" means.** It codes a government's stated position. It does not judge which side is right.

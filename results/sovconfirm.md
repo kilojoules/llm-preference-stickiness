@@ -99,3 +99,4 @@ Holm (primary): C1 0.00932, C2 0.177.
 - hunyuan-a13b: null-axis valid share {'YN': 4.388716753055782e-13, 'PW': 1.1939574589048838e-10, 'LIK': 2.124177994281731e-11}
 - orion-14b: null-axis valid share {'YN': 0.38472492727088253, 'PW': 0.16679981384874185, 'LIK': 0.37686525340595467}
 - r1-distill-qwen-14b: null-axis valid share {'YN': 0.21494455343775612, 'PW': 0.0030374488655647795, 'LIK': 0.06018389931357666}
+- telechat-12b: null-axis valid share {'YN': 0.47007255496853334, 'PW': 0.12745508142039758, 'LIK': 0.4641674808224042}

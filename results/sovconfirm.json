@@ -43,6 +43,10 @@
   {
    "model": "r1-distill-qwen-14b",
    "reason": "null-axis valid share {'YN': 0.21494455343775612, 'PW': 0.0030374488655647795, 'LIK': 0.06018389931357666}"
+  },
+  {
+   "model": "telechat-12b",
+   "reason": "null-axis valid share {'YN': 0.47007255496853334, 'PW': 0.12745508142039758, 'LIK': 0.4641674808224042}"
   }
  ],
  "per_model": {
